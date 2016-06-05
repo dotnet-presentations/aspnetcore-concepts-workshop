@@ -94,4 +94,30 @@
 ## Adding default document support
 
 1. Change the static files middleware in `Startup.cs` from `app.UseStaticFiles()` to `app.UseFileServer()`.
-2. Run the application. The default page `index.html` should show when navigating to the root of the site.
+1. Run the application. The default page `index.html` should show when navigating to the root of the site.
+
+## Changing environments
+
+1. The default environment in visual studio is development. In the property pages you can see this is specified by the environment variables section:
+
+  ![image](https://cloud.githubusercontent.com/assets/95136/15806164/a57a79a2-2b3d-11e6-9551-9e106036e0c0.png)
+
+1. Add some code to the `Configure` method in `Startup.cs` to take in `IHostingEnvironment` and print out the environment name:
+
+  ```C#
+    public void Configure(IApplicationBuilder app, IHostingEnvironment environment)
+    {
+        app.UseStaticFiles();
+
+        app.Run(async (context) =>
+        {
+            await context.Response.WriteAsync($"Hello World! {environment.EnvironmentName}");
+        });
+    }
+  ```
+1. Run the application and it should print out `Hello World! Development`.
+1. Change the application to run in the `Production` environment by changing the `ASPNETCORE_ENVIRONMENT` environment variable on the `Debug` property page:
+ 
+  ![image](https://cloud.githubusercontent.com/assets/95136/15806196/9b52efee-2b3e-11e6-851b-35765d5b2a4d.png)
+
+1. 1. Run the application and it should print out `Hello World! Production`.
