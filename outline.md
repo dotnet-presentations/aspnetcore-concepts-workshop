@@ -18,8 +18,8 @@
 | 4:30 PM - 5:00 PM | Lab #5 | New features and architecture to write testable applications and good unit tests. |
 
 ## Day 2
-| Time | Title | Description | Lead |
-| ---- | ----- | ----------- | ---- |
+| Time | Title |  |
+| ---- | ----- | ---- |
 | 9:00 AM - 10:00 AM | Session #6: Razor & Tag Helpers | Damian |
 | 10:00 AM - 10:30 AM | Lab #6 | Building a Tag Helper |
 | 10:30 AM - 10:45 AM | Break | |
