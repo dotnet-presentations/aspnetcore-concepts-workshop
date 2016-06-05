@@ -17,6 +17,48 @@
 1. Open the `Program.cs` file and change the greeting message
 1. Run the application again using `dotnet run` and note the message about the application being re-built
 
-## Run the application output directly
+## Run the project output directly
 1. `dotnet run` checks the project source every time to determine if a re-build is necessary and as such is intended for active development scenarios.
-1. Run the application output directly by typing `dotnet ./Debug/netcoreapp1.0/MyNewApp.dll`
+1. Run the project output directly by typing `dotnet ./Debug/netcoreapp1.0/MyNewApp.dll`
+1. Change the greeting in `Program.cs` again and run the application output directly once more, note that the greeting doesn't change as you didn't re-build the project.
+1. Build the project by typing `dotnet build`
+1. Run the project output directly again and see the greeting has now changed 
+
+## Explore the project files
+1. Open the `project.json` file in Visual Studio and explore its contents and try using the IntelliSense to change some project configuration values
+1. Look at the files and directories created when the project is built
+
+## Make it a web application
+1. Add a reference to the ASP.NET Core web server "Kestrel" by adding it to the `"dependencies"` section of the `project.json` file:
+   
+   ``` json
+   {
+     "dependencies": {
+       "Microsoft.NETCore.App": { "version": "1.0.0-rc2-3002702", "type": "platform" },
+       "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final"
+     }
+   }
+   ```
+1. At the command prompt, restore the new dependency by typing `dotnet restore`
+1. Open the `Program.cs` file and change the `Main` method to:
+
+   ``` c#
+   public static void Main(string[] args)
+   {
+       var host = new WebHostBuilder()
+           .UseKestrel()
+           .Configure(app => app.Run(context => context.Response.WriteAsync("Hello World!")))
+           .Build();
+
+       host.Run();
+   }
+   ```
+1. Add the following `using` statements to the top of the `Program.cs` file:
+
+   ``` c#
+   using Microsoft.AspNetCore.Builder;
+   using Microsoft.AspNetCore.Http;
+   using Microsoft.AspNetCore.Hosting;
+   ```
+1. At the command prompt, run the application using `dotnet run`
+1. Open a web browser and browse to http://localhost:5000/ to see the greeting
