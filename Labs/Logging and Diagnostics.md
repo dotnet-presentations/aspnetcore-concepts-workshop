@@ -6,7 +6,6 @@
 
     ```JSON
       "dependencies": {
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
         "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final"
       },
     ```
