@@ -3,7 +3,7 @@
 ## Setting up the MVC API project
 
 1. Use the instructions in Getting Started to setup an Empty Web Application.
-2. Add `Microsoft.AspNet.Mvc.Core` to `project.json`:
+2. Add `Microsoft.AspNetCore.Mvc.Core` to `project.json`:
 
   ```JSON
   "dependencies": {
