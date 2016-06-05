@@ -6,11 +6,11 @@
 
     ```JSON
       "dependencies": {
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-        "Microsoft.Extensions.Logging.Console": "1.0.0-*"
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+        "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final"
       },
     ```
-3. Navigate to `Startup.cs` Change the `Configure` method to:
+3. Navigate to `Startup.cs` and change the `Configure` method to:
     
     ```C#
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
@@ -32,11 +32,11 @@
     }
     ```
     
-5. In Visual Studio, change the active command to web by navigating to the play/run button and changing the drop down to the web command. 
+5. In Visual Studio, change the active launch host to the application itself (self-host) by navigating to the play/run button and changing the drop-down to the entry named after the application. 
 
     ![image](https://cloud.githubusercontent.com/assets/95136/12222924/633ef134-b7c1-11e5-9146-da36013da8d8.png)
 
-6. Run the application and open a browser window with `http://localhost:5000/` as the address. You should see the default request logging in the framework as well as your custom log message.
+6. Run the application and open a browser window with `http://localhost:5000/` as the address. You should see the default log messages from the framework as well as your custom log message in the console window.
 
 ## Filtering logs
 1. Add a couple more logging statements to the `Configure` method:
@@ -49,6 +49,7 @@
 
         startupLogger.LogCritical("This is a critical message");
         startupLogger.LogDebug("This is a debug message");
+        startupLogger.LogTrace("This is a trace message");
         startupLogger.LogWarning("This is a warning message");
         startupLogger.LogError("This is an error message");
     }
@@ -59,7 +60,7 @@
     ```C#
     public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
     {
-        loggerFactory.AddConsole(LogLevel.Debug);
+        loggerFactory.AddConsole(LogLevel.Trace);
         ...
     }
     ```
@@ -83,9 +84,9 @@
 
     ```JSON
       "dependencies": {
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-        "Microsoft.AspNetCore.Logging.Console": "1.0.0-*",
-        "Serilog.Framework.Logging": "1.0.0-*"
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+        "Microsoft.AspNetCore.Logging.Console": "1.0.0-rc2-final",
+        "Serilog.Extensions.Logging": "1.0.0-rc2-10110"
       },
     ```
 2. Configure the Serilog in `Startup.cs` to write to a file called `logfile.txt` in the project root:
@@ -98,8 +99,8 @@
             var logFile = Path.Combine(hostingEnvironment.ContentRootPath, "logfile.txt");
     
             Log.Logger = new LoggerConfiguration()
-                            .WriteTo.TextWriter(File.CreateText(logFile))
-                            .CreateLogger();
+                .WriteTo.TextWriter(File.CreateText(logFile))
+                .CreateLogger();
         }
     }
     ```
@@ -145,18 +146,18 @@
         ...
     }
     ```
-2. Run the application and open a browser window with `http://localhost:5000/` as the address. The browser should show a generic error page but the exception message should appear in the console.
+2. Run the application and open a browser window with `http://localhost:5000/` as the address. The browser should show a generic browser error page but the exception message should appear in the console.
 
 ## Adding the diagnostics middleware
 
-1. Add the `Microsoft.AspNet.Diagnostics` to `project.json`:
+1. Add the `Microsoft.AspNetCore.Diagnostics` to `project.json`:
 
     ```JSON
       "dependencies": {
-        "Microsoft.AspNetCore.Diagnostics": "1.0.0-*",
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-        "Microsoft.Extensions.Logging.Console": "1.0.0-*",
-        "Serilog.Framework.Logging": "1.0.0-*"
+        "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+        "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
+        "Serilog.Extensions.Logging": "1.0.0-rc2-10110"
       },
     ```
     
@@ -170,7 +171,7 @@
         throw new InvalidOperationException("Oops!");
     });
     ```
-3. Run the application and open a browser window with `http://localhost:5000/` as the address. You should see the exception page in the browser.
+3. Run the application and open a browser window with `http://localhost:5000/` as the address. You should see an application exception page in the browser.
 
 ## Only showing exception pages during development
 
@@ -201,7 +202,7 @@
     }
     ```
 
-3. Run the application and open a browser window with `http://localhost:5000/` as the address. You should see the custom error page instead of the exception.
+3. Run the application in "Production" and open a browser window with `http://localhost:5000/` as the address. You should see the custom error page instead of the exception.
 
 ## Showing custom pages for non 500 status codes
 
