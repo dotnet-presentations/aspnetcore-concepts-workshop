@@ -5,6 +5,19 @@
 1. Create a new ASP.NET Core application:
   1. File -> New -> .NET Core -> ASP.NET Core Web Application (.NET Core)
 
+## Running the application under IIS
+
+1. The application should be setup to run under IIS by default.
+1. Run the application and navigate to the root. It should show the hello world middleware.
+
+## Running the application on Kestrel directly
+
+1. Change the Debug drop down in the toolbar to the application name as shown below.
+  
+  ![image](https://cloud.githubusercontent.com/assets/95136/15806049/abf005b6-2b3a-11e6-8fb4-ca75c9f68913.png)
+
+1. Run the application and navigate to the root. It should show the hello world middleware.
+
 ## Serving static files
 
 1. Add the `Microsoft.AspNet.StaticFiles` package to `project.json`:
