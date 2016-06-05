@@ -7,7 +7,7 @@
 | 10:00 AM - 10:30 AM | Lab #1 | Get bits installed, create first app, etc. |
 | 10:30 AM - 10:45 AM | Break | |
 | 10:45 AM - 11:30 AM | Session #2: Introduction to ASP.NET Core | David |
-| 11:30 AM - 12:00 PM | Lab #2 | WebHost, Startup, Configuration, Environments, & Middleware |
+| 11:30 AM - 12:00 PM | Lab #2 | WebHost, Startup, Configuration, Environments, Middleware, & IIS |
 | 12:00 PM - 1:00 PM | Lunch | |
 | 1:00 PM - 1:45 PM | Session #3: Introduction to Routing & MVC | Damian |
 | 1:45 PM - 2:15 PM | Lab #3 | Routing patterns, MVC basics, etc. |
