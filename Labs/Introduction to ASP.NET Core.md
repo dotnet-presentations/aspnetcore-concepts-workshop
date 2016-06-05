@@ -17,6 +17,31 @@
   ![image](https://cloud.githubusercontent.com/assets/95136/15806049/abf005b6-2b3a-11e6-8fb4-ca75c9f68913.png)
 
 1. Run the application and navigate to the root. It should show the hello world middleware.
+1. Change the port to `8081` by adding a call to `UseUrls` in the `Startup.cs`:
+
+   ```
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseUrls("http://localhost:8081")
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
+            host.Run();
+
+        }
+    }
+   ```
+1. Navigate to the project properties (by right clicking on the project, and selection `Properties`)
+1. Go to the `Debug` tab and change `Launch URL` to `http://localhost:8081`
+
+   ![image](https://cloud.githubusercontent.com/assets/95136/15806095/157c4c32-2b3c-11e6-91db-b231aa113c31.png)
+
+1. Run the application and navigate to the root. It should show the hello world middleware running on port 8081.
 
 ## Serving static files
 
