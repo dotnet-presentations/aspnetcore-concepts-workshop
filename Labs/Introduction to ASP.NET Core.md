@@ -1,5 +1,5 @@
 
-## Create a new Console project, configure it to use the unstable packages feed, and upgrade it to RC2
+## Create a new ASP.NET Core application
 
 1. Open Visual Studio 2015 Update 2
 1. Create a new ASP.NET Core application:
