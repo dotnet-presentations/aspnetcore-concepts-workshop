@@ -107,17 +107,4 @@
 
 # Adding a unit test project
 
-## Adding the xUnit myget feed to the application's feed configuration
-1. Open the `nuget.config` file in the solution directory
-1. Add the xUnit CI feed: `<add key="xUnit" value="https://www.myget.org/F/xunit/api/v2" />`
-
-## Creating the test project
-1. Create a new sub-directory of the solution directory `test` and add it to the solution as a solution folder
-1. Create a new project in the `test` directory called `ProjectTest` using the "Class Library (Package)" project template
-1. Delete the `Class1.cs` file
-1. Open the `project.json` file and add a reference to `xunit` and `xunit.runner.dnx`, version "2.1.0-*" for both and ensure they restore successfully
-1. Add a new class `MyTest.cs`
-1. Add a method `public void MyFirstTest()` and decorate it with the `[Fact]` attribute, importing any required namespaces as you go
-1. Do a simple assertion in the method body that will pass, e.g. `Assert.Equal(1, 1);`
-1. Open the "Test Explorer" window
-1. Build the solution and your tests should appear  
+Follow the instructions at https://xunit.github.io/docs/getting-started-dotnet-core.html to add an xUnit testing project.
