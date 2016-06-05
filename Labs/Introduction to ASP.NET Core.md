@@ -45,7 +45,7 @@
       <title></title>
   </head>
   <body>
-      <h1>Hello from ASP.NET 5!</h1> 
+      <h1>Hello from ASP.NET Core!</h1> 
   </body>
   </html>
   ```
