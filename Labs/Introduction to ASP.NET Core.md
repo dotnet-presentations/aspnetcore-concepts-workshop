@@ -11,8 +11,8 @@
 
   ```JSON
   "dependencies": {
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-*"
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-final"
   },
   ```
 1. Go to `Startup.cs` in the `Configure` method and add `UseStaticFiles` before the hello world middleware:
