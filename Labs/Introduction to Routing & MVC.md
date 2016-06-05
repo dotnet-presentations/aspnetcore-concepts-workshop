@@ -1,14 +1,14 @@
 # Introduction to Routing & MVC
 
 ## Install the routing package
-1. Use the application you created in the first lab
+1. Use the application you created in the earlier labs
 1. Open the `project.json` file
-1. In the `dependencies` section, add an entry for the "Microosft.AspNet.Routing.Extensions" package:
+1. In the `dependencies` section, add an entry for the "Microsoft.AspNetCore.Routing" package:
 
   ``` JSON
   "dependencies": {
     ...,
-    "Microsoft.AspNet.Routing.Extensions": "1.0.0-*"
+    "Microsoft.AspNetCore.Routing": "1.0.0-rc2-final"
   }
   ```
 1. Open the `Startup.cs` file
@@ -23,10 +23,10 @@
 1. In the `Configure` method, create a `RouteBuilder` with a handler for the root of the site and add it to the middleware pipeline:
   
   ``` c#
+  using Microsoft.AspNetCore.Http;
+  ...
   public void Configure(IApplicationBuilder app)
   {
-      app.UseIISPlatformHandler();
-
       var routeBuilder = new RouteBuilder(app);
 
       routeBuilder.MapGet("", context => context.Response.WriteAsync("Hello from Routing!"));
@@ -59,12 +59,12 @@
 1. Experiment with changing the order the routes are added and observe what affect that has on which route is matched for a given URL
 
 # Add MVC
-1. Open `project.json` and add "Microsoft.AspNet.Mvc" to the `dependencies` section:
+1. Open `project.json` and add "Microsoft.AspNetCore.Mvc" to the `"dependencies"` section:
 
   ``` JSON
   "dependencies": {
     ...,
-    "Microsoft.AspNet.Mvc": "6.0.0-*"
+    "Microsoft.AspNetCore.Mvc": "1.0.0-*"
   }
   ```
 1. Add a "Controllers" folder to your application
