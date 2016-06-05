@@ -7,8 +7,8 @@
 
   ```JSON
   "dependencies": {
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Core": "6.0.0-*",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0-rc2-final",
   },
   ```
 3. In `Startup.cs` add `services.AddMvcCore()` to `ConfigureServices` and add `app.UseMvc()` to `Configure`:
@@ -63,9 +63,9 @@
 
   ```JSON
   "dependencies": {
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Core": "6.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Formatters.Json": "6.0.0-*"
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0-rc2-final"
   },
   ```
 
@@ -203,10 +203,10 @@
 
   ```JSON
   "dependencies": {
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Core": "6.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Formatters.Json": "6.0.0-*",
-    "Microsoft.AspNetCore.Mvc.Formatters.Xml": "6.0.0-*"
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Formatters.Xml": "1.0.0-rc2-final"
   },
   ```
 
