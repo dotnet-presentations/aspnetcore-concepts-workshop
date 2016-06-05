@@ -120,4 +120,4 @@
  
   ![image](https://cloud.githubusercontent.com/assets/95136/15806196/9b52efee-2b3e-11e6-851b-35765d5b2a4d.png)
 
-1. 1. Run the application and it should print out `Hello World! Production`.
+1. Run the application and it should print out `Hello World! Production`.
