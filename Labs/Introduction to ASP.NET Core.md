@@ -164,7 +164,7 @@
   
   ```JSON
   {
-    "key": "something"
+    "message": "Hello from configuration"
   }
   ```
   
@@ -189,8 +189,14 @@
 
         app.Run(async (context) =>
         {
-            await context.Response.WriteAsync($"key = {Configuration["key"]}");
+            await context.Response.WriteAsync($"{Configuration["message"]}");
         });
     }
   ```
-  
+
+1. Run the application and it should print out `Hello from config`.
+
+## Extra
+- Add support for reloading the configuration without an application restart.
+- Replace the JSON configuration provider with the XML configuration provider
+- Write a custom configuration provider
