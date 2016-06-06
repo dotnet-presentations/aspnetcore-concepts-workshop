@@ -237,3 +237,4 @@
 1. Access the exception when using the exception handler middleware, log it to the logging system. (**Note: The exception handler middleware does log the exception via the logging system.**)
 2. Serve an html page when an exception occurs using the static files middleware and the exception handler middleware.
 3. Serve an html page for a 404 status using the static files middleware and status code pages middleware.
+4. Write a custom logging provider
