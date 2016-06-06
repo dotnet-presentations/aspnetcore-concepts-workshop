@@ -45,7 +45,7 @@
 
 ## Serving static files
 
-1. Add the `Microsoft.AspNet.StaticFiles` package to `project.json`:
+1. Add the `Microsoft.AspNetCore.StaticFiles` package to `project.json`:
 
   ```JSON
   "dependencies": {
@@ -121,3 +121,76 @@
   ![image](https://cloud.githubusercontent.com/assets/95136/15806196/9b52efee-2b3e-11e6-851b-35765d5b2a4d.png)
 
 1. Run the application and it should print out `Hello World! Production`.
+
+## Setup the configuration system
+
+1. Add the `Microsoft.Extensions.Configuration.Json` package to `project.json`:
+ 
+  ```JSON
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0-rc2-3002702",
+      "type": "platform"
+    },
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-final",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final"
+  },
+  ```
+1. Add a `Configuration` property to `Startup.cs` of type `IConfigurationRoot`:
+
+```C#
+  public class Startup
+  {
+      ...
+      public IConfigurationRoot Configuration { get; set; }
+      ...
+  }
+```
+
+1. Go to `Startup.cs` and add a constructor that configures the configuration system:
+
+  ```C#
+  public Startup()
+  {
+      Configuration = new ConfigurationBuilder()
+                          .AddJsonFile("appsettings.json")
+                          .Build();
+  }
+  ```
+1. Run the application and it should fail with an exception saying that it cannot find the `'appsettings.json'`.
+1. Create a file in the root of the project called `appsettings.json` with the following content:
+  
+  ```JSON
+  {
+    "key": "something"
+  }
+  ```
+  
+1. Modify the `Startup` constructor in `Startup.cs` to inject `IHostingEnvironment` and use it to set the base path for the configuration system to the `ContentRootPath`:
+
+  ```C#
+  public Startup(IHostingEnvironment env)
+  {
+      Configuration = new ConfigurationBuilder()
+                          .SetBasePath(env.ContentRootPath)
+                          .AddJsonFile("appsettings.json")
+                          .Build();
+  }
+  ```
+  
+1. In `Startup.cs` modify the `Configure` method to print out the configuration key in the http response:
+
+    ```C#
+    public void Configure(IApplicationBuilder app, IHostingEnvironment environment)
+    {
+        app.UseStaticFiles();
+
+        app.Run(async (context) =>
+        {
+            await context.Response.WriteAsync($"key = {Configuration["key"]}");
+        });
+    }
+  ```
+  
