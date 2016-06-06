@@ -19,7 +19,7 @@
 
 ## Run the project output directly
 1. `dotnet run` checks the project source every time to determine if a re-build is necessary and as such is intended for active development scenarios.
-1. Run the project output directly by typing `dotnet ./Debug/netcoreapp1.0/MyNewApp.dll`
+1. Run the project output directly by typing `dotnet ./bin/Debug/netcoreapp1.0/MyNewApp.dll`
 1. Change the greeting in `Program.cs` again and run the application output directly once more, note that the greeting doesn't change as you didn't re-build the project.
 1. Build the project by typing `dotnet build`
 1. Run the project output directly again and see the greeting has now changed 
@@ -40,6 +40,13 @@
    }
    ```
 1. At the command prompt, restore the new dependency by typing `dotnet restore`
+1. Add the following `using` statements to the top of the `Program.cs` file:
+
+   ``` c#
+   using Microsoft.AspNetCore.Builder;
+   using Microsoft.AspNetCore.Http;
+   using Microsoft.AspNetCore.Hosting;
+   ```
 1. Open the `Program.cs` file and change the `Main` method to:
 
    ``` c#
@@ -52,13 +59,6 @@
 
        host.Run();
    }
-   ```
-1. Add the following `using` statements to the top of the `Program.cs` file:
-
-   ``` c#
-   using Microsoft.AspNetCore.Builder;
-   using Microsoft.AspNetCore.Http;
-   using Microsoft.AspNetCore.Hosting;
    ```
 1. At the command prompt, run the application using `dotnet run`
 1. Open a web browser and browse to http://localhost:5000/ to see the greeting
