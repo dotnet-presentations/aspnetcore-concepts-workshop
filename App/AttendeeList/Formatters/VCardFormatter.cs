@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,14 @@ namespace AttendeeList
             return type == typeof(Attendee);
         }
 
+        public override void WriteResponseHeaders(OutputFormatterWriteContext context)
+        {
+            var attendee = context.Object as Attendee;
+            var fileName = $"{attendee.FirstName}_{attendee.LastName}.vcf";
+            fileName = new string(fileName.Select(c => Path.GetInvalidPathChars().Contains(c) ? '_' : c).ToArray(), 0, fileName.Length);
+            context.HttpContext.Response.Headers.Add("content-disposition", $"attachment; filename=\"" + fileName + "\"");
+        }
+
         public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context)
         {
             var attendee = context.Object as Attendee;
@@ -29,6 +38,7 @@ VERSION: 3.0
 N:{attendee.LastName};{attendee.FirstName};;;
 FN:{attendee.FirstName} {attendee.LastName}
 EMAIL;type=INTERNET;type=pref:{attendee.Email}
+ORG:{attendee.Company};
 END:VCARD";
 
             return context.HttpContext.Response.WriteAsync(VCardEncoder.Encode(card));

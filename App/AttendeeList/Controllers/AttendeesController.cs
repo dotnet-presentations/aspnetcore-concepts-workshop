@@ -44,6 +44,20 @@ namespace AttendeeList.Controllers
             return View(attendee);
         }
 
+        [HttpGet("{id:int}/vcard")]
+        [Produces("text/vcard")]
+        public async Task<Attendee> VCard(int? id)
+        {
+            if (id == null)
+            {
+                return null;
+            }
+
+            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+
+            return attendee;
+        }
+
         // GET: Attendees/Create
         [HttpGet("create")]
         public IActionResult Create()
