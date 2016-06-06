@@ -85,7 +85,8 @@
       "dependencies": {
         "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
         "Microsoft.AspNetCore.Logging.Console": "1.0.0-rc2-final",
-        "Serilog.Extensions.Logging": "1.0.0-rc2-10110"
+        "Serilog.Extensions.Logging": "1.0.0-rc2-10110",
+        "Serilog.Sinks.File": "2.0.0-rc-706"
       },
     ```
 2. Configure the Serilog in `Startup.cs` to write to a file called `logfile.txt` in the project root:
@@ -98,7 +99,7 @@
             var logFile = Path.Combine(hostingEnvironment.ContentRootPath, "logfile.txt");
     
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.TextWriter(File.CreateText(logFile))
+                .WriteTo.File(logFile)
                 .CreateLogger();
         }
     }
@@ -156,7 +157,8 @@
         "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
         "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
         "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
-        "Serilog.Extensions.Logging": "1.0.0-rc2-10110"
+        "Serilog.Extensions.Logging": "1.0.0-rc2-10110",
+        "Serilog.Sinks.File": "2.0.0-rc-706"
       },
     ```
     
