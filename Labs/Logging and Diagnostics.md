@@ -1,7 +1,7 @@
 ## Logging
 
 ## Setting up your application for logging
-1. Use the application from the first lab (or setup steps from the fisrt lab).
+1. Use the application from the first lab (or setup steps from the first lab).
 2. Add the `Microsoft.Extensions.Logging.Console` package to `project.json`:
 
     ```JSON
