@@ -13,10 +13,10 @@ namespace AttendeeList
         public Startup(IHostingEnvironment environment)
         {
             Configuration = new ConfigurationBuilder()
-                            .SetBasePath(environment.ContentRootPath)
-                            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                            .AddEnvironmentVariables()
-                            .Build();
+                .SetBasePath(environment.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .Build();
         }
         
         public IConfiguration Configuration { get; set; }
@@ -40,7 +40,7 @@ namespace AttendeeList
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseFileServer();
+            app.UseStaticFiles();
 
             app.UseMvc();
         }

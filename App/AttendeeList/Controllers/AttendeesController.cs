@@ -1,56 +1,152 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using AttendeeList;
 
-namespace AttendeeList
+namespace AttendeeList.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("/")]
     public class AttendeesController : Controller
     {
         private readonly WorkshopContext _context;
+
         public AttendeesController(WorkshopContext context)
         {
-            _context = context;
+            _context = context;    
         }
 
+        // GET: /
         [HttpGet]
-        public Task<List<Attendee>> Get()
+        public async Task<IActionResult> Index()
         {
-            return _context.Attendees.ToListAsync();
+            return View(await _context.Attendees.ToListAsync());
         }
-        
+
+        // GET: Attendees/Details/5
         [HttpGet("{id:int}")]
-        public Task<Attendee> Get(int id)
+        public async Task<IActionResult> Details(int? id)
         {
-            return _context.Attendees.SingleOrDefaultAsync(a => a.Id == id);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Attendee atendee)
-        {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return BadRequest(ModelState);
+                return NotFound();
             }
-            
-            _context.Attendees.Add(atendee);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get), new { id = atendee.Id }, atendee);
 
-        }
-        
-        [HttpDelete("{id:int}")]
-        public Task Delete(int id)
-        {
-            var atendee = new Attendee
+            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+            if (attendee == null)
             {
-                Id = id
-            };
-            _context.Attach(atendee);
-            _context.Remove(atendee);
-            return _context.SaveChangesAsync();
+                return NotFound();
+            }
+
+            return View(attendee);
+        }
+
+        // GET: Attendees/Create
+        [HttpGet("create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Attendees/Create
+        [HttpPost("create")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Attendee attendee)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(attendee);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(attendee);
+        }
+
+        // GET: Attendees/Edit/5
+        [HttpGet("{id:int}/edit")]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+            if (attendee == null)
+            {
+                return NotFound();
+            }
+            return View(attendee);
+        }
+
+        // POST: Attendees/Edit/5
+        [HttpPost("{id:int}/edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Attendee attendee)
+        {
+            if (id != attendee.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(attendee);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!AttendeeExists(attendee.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            return View(attendee);
+        }
+
+        // GET: Attendees/Delete/5
+        [HttpGet("{id:int}/delete")]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+            if (attendee == null)
+            {
+                return NotFound();
+            }
+
+            return View(attendee);
+        }
+
+        // POST: Attendees/Delete/5
+        [HttpPost("{id:int}/delete"), ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Attendees.Remove(attendee);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        private bool AttendeeExists(int id)
+        {
+            return _context.Attendees.Any(e => e.Id == id);
         }
     }
 }
