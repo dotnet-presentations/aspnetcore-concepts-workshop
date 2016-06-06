@@ -40,14 +40,14 @@
    }
    ```
 1. At the command prompt, restore the new dependency by typing `dotnet restore`
-1. Add the following `using` statements to the top of the `Program.cs` file:
+1. Open the `Program.cs` file and add the following `using` statements to the top of the `Program.cs` file:
 
    ``` c#
    using Microsoft.AspNetCore.Builder;
    using Microsoft.AspNetCore.Http;
    using Microsoft.AspNetCore.Hosting;
    ```
-1. Open the `Program.cs` file and change the `Main` method to:
+1. Change the `Main` method to:
 
    ``` c#
    public static void Main(string[] args)
