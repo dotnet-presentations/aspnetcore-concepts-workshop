@@ -1,5 +1,9 @@
 # Build a simple API
 
+## Prerequisites
+
+- Download [POSTman](https://www.getpostman.com/) OR [Fiddler](http://www.telerik.com/fiddler) 
+
 ## Setting up the MVC API project
 
 1. Use the instructions in Getting Started to setup an Empty Web Application.
@@ -187,7 +191,7 @@
   }
   ```
 
-1. Run the application, open a tool like [fiddler](http://www.telerik.com/fiddler) or [POSTman](https://www.getpostman.com/), and post a JSON payload with the `Content-Type` header `application/json` to `/api/products`:
+1. Run the application and post a JSON payload with the `Content-Type` header `application/json` to `/api/products`:
 
   ```JSON
   {
