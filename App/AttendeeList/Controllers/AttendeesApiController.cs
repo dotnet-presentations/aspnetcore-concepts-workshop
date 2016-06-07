@@ -24,9 +24,9 @@ namespace AttendeeList
         }
 
         [HttpGet("{id:int}")]
-        public Task<Attendee> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return _context.Attendees.SingleOrDefaultAsync(a => a.Id == id);
+            return OkOrNotFound(await _context.Attendees.SingleOrDefaultAsync(a => a.Id == id));
         }
 
         [HttpPost]
@@ -86,6 +86,16 @@ namespace AttendeeList
             _context.Remove(attendee);
 
             return _context.SaveChangesAsync();
+        }
+
+        private IActionResult OkOrNotFound(object result)
+        {
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
         }
 
         private bool AttendeeExists(int id)

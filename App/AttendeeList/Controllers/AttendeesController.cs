@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AttendeeList;
 
 namespace AttendeeList.Controllers
 {
@@ -79,26 +77,17 @@ namespace AttendeeList.Controllers
             {
                 _context.Add(attendee);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
+
             return View(attendee);
         }
 
         // GET: Attendees/Edit/5
         [HttpGet("{id:int}/edit")]
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
-            if (attendee == null)
-            {
-                return NotFound();
-            }
-            return View(attendee);
+            return ViewOrNotFound(await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id));
         }
 
         // POST: Attendees/Edit/5
@@ -129,28 +118,14 @@ namespace AttendeeList.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             return View(attendee);
         }
 
         // GET: Attendees/Delete/5
         [HttpGet("{id:int}/delete")]
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
-            if (attendee == null)
-            {
-                return NotFound();
-            }
-
-            return View(attendee);
-        }
+        public Task<IActionResult> Delete(int id) => Edit(id);
 
         // POST: Attendees/Delete/5
         [HttpPost("{id:int}/delete"), ActionName("Delete")]
@@ -158,9 +133,21 @@ namespace AttendeeList.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+
             _context.Attendees.Remove(attendee);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        private IActionResult ViewOrNotFound(object model)
+        {
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            return View(model);
         }
 
         private bool AttendeeExists(int id)
