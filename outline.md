@@ -28,7 +28,7 @@
 | 10:45 AM - 11:30 AM | Session #7: MVC Web API | David |
 | 11:30 AM - 12:00 PM | Lab #7 |  |
 | 12:00 PM - 1:00 PM | Lunch | |
-| 1:00 PM - 3:15 PM | App building: Attendee List | |
+| 1:00 PM - 3:00 PM | App building: Attendee List | |
 | 3:00 PM - 3:15 PM | Break | |
 | 3:15 PM - 4:00 PM | Session #8: Deploying to Azure | David |
 | 4:00 PM - 4:45 PM | Lab #8 | Deploy app to azure |
