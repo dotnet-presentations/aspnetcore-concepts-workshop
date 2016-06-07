@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ namespace AttendeeList
         {
             return _context.Attendees.ToListAsync();
         }
-        
+
         [HttpGet("{id:int}")]
         public Task<Attendee> Get(int id)
         {
@@ -29,19 +30,51 @@ namespace AttendeeList
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Attendee attendee)
+        public async Task<IActionResult> Create([FromBody]Attendee attendee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            
+
             _context.Attendees.Add(attendee);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(Get), new { id = attendee.Id }, attendee);
         }
-        
+
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update([FromBody]Attendee attendee)
+        {
+            if (attendee == null)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                BadRequest(ModelState);
+            }
+
+            try
+            {
+                _context.Update(attendee);
+                await _context.SaveChangesAsync();
+                return Ok(attendee);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AttendeeExists(attendee.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
         [HttpDelete("{id:int}")]
         public Task Delete(int id)
         {
@@ -51,7 +84,13 @@ namespace AttendeeList
             };
             _context.Attach(attendee);
             _context.Remove(attendee);
+
             return _context.SaveChangesAsync();
+        }
+
+        private bool AttendeeExists(int id)
+        {
+            return _context.Attendees.Any(e => e.Id == id);
         }
     }
 }
