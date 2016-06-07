@@ -1,9 +1,11 @@
 {
   "version": "1.0.0-*",
+  
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true
   },
+
   "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
@@ -32,6 +34,7 @@
       "type": "build"
     }
   },
+
   "tools": {
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview1-final",
@@ -43,8 +46,13 @@
         "portable-net45+win8+dnxcore50",
         "portable-net45+win8"
       ]
+    },
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
+      "version": "1.0.0-preview1-final",
+      "imports": "portable-net45+win8+dnxcore50"
     }
   },
+
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
@@ -52,11 +60,16 @@
       ]
     }
   },
+  
   "publishOptions": {
-    "include": [ 
+    "include": [
       "wwwroot",
       "appsettings.json",
       "Views"
     ]
+  },
+
+  "scripts": {
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
 }

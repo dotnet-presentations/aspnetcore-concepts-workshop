@@ -53,7 +53,7 @@ namespace AttendeeList
 
             if (!ModelState.IsValid)
             {
-                BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
 
             try
