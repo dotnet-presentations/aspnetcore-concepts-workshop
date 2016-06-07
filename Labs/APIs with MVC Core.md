@@ -122,7 +122,7 @@
   ```C#
   public Product Get(int id)
   {
-      return _products.FirstOrDefault(p => p.Id == id);
+      return _products.Single(p => p.Id == id);
   }
   ```
 
@@ -132,7 +132,7 @@
   [HttpGet("{id}")]
   public Product Get(int id)
   {
-      return _products.FirstOrDefault(p => p.Id == id);
+      return _products.Single(p => p.Id == id);
   }
   ```
 
@@ -144,7 +144,7 @@
   [HttpGet("{id}")]
   public IActionResult Get(int id)
   {
-      var product = _products.FirstOrDefault(p => p.Id == id);
+      var product = _products.SingleOrDefault(p => p.Id == id);
 
       if (product == null)
       {
@@ -167,7 +167,7 @@
   }
   ```
 
-2. Add an `[HttpPost]` attribute to the method to constrain it to the POST HTTP verb:
+1. Add an `[HttpPost]` attribute to the method to constrain it to the POST HTTP verb:
 
   ```C#
   [HttpPost]
@@ -177,7 +177,7 @@
   }
   ```
   
-3. Add a `[FromBody]` to the `product` argument:
+1. Add a `[FromBody]` to the `product` argument:
 
   ```C#
   [HttpPost]
@@ -187,7 +187,7 @@
   }
   ```
 
-4. Run the application, open a tool like [fiddler](http://www.telerik.com/fiddler) or [POSTman](https://www.getpostman.com/), and post a JSON payload with the `Content-Type` header `application/json` to `/api/products`:
+1. Run the application, open a tool like [fiddler](http://www.telerik.com/fiddler) or [POSTman](https://www.getpostman.com/), and post a JSON payload with the `Content-Type` header `application/json` to `/api/products`:
 
   ```JSON
   {
@@ -196,7 +196,104 @@
   }
   ```
 
-5. Make a GET request to `/api/products` and the new entity should show up in the list.
+1. Make a GET request to `/api/products` and the new entity should show up in the list.
+1. Change the `Post` method to return an `IActionResult` with a 201 status code and the added `Product`:
+
+  ```C#
+  [HttpPost]
+  public IActionResult Post([FromBody]Product product)
+  {
+      _products.Add(product);
+      return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
+  }
+  ```
+  
+1. Add another product to the list by posting to `/api/products`:
+
+  ```JSON
+  {
+    "Id": "5",
+    "Name": "Radio"
+  }
+  ```
+  
+1. It should return a 201 and the `Product` that was added as JSON.
+
+## Add model validation
+
+1. Add the `Microsoft.AspNetCore.Mvc.DataAnnotations` package to `project.json`:
+
+  ```JSON
+  "dependencies": {
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Formatters.Xml": "1.0.0-rc2-final"
+    "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0-rc2-final"
+  },
+  ```
+  
+1. In `Startup.cs` add a call to `AddDataAnnotations()` chained off the `AddMvcCore` method in `ConfigureServices`:
+
+  ```C#
+  public void ConfigureServices(IServiceCollection services)
+  {
+      services.AddMvcCore()
+          .AddJsonFormatters()
+          .AddDataAnnotations();
+  }
+  ```
+1. Modify the `Product.cs` file and add a `[Required]` attribute to the name property:
+
+  ```C#
+  public class Product
+  {
+      public int Id { get; set; }
+  
+      [Required]
+      public string Name { get; set; }
+  }
+  ```
+
+1. In `ProductsController.cs` modify the `Post` method and add a `ModelState.IsValid` check. If the model state is not valid, return a 400 response to the client:
+
+  ```C#
+  [HttpPost]
+  public IActionResult Post([FromBody]Product product)
+  {
+      if (!ModelState.IsValid)
+      {
+          return BadRequest();
+      }
+      
+      _products.Add(product);
+      return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
+  }
+  ```
+
+1. POST an empty JSON payload to `/api/products` and it should return a 400 response:
+
+  ```JSON
+  {}
+  ```
+
+1. Modify the `Post` method to return the validation errors to the client by passing the `ModelState` object to the `BadRequest` method:
+
+  ```C#
+  [HttpPost]
+  public IActionResult Post([FromBody]Product product)
+  {
+      if (!ModelState.IsValid)
+      {
+          return BadRequest(ModelState);
+      }
+      
+      _products.Add(product);
+      return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
+  }
+  ```
+  
+1. POST an empty JSON payload to `/api/products` and it should return a 400 response with the validation errors formatted as JSON.
 
 ## Adding XML support
 
@@ -211,7 +308,7 @@
   },
   ```
 
-2. In `Startup.cs` add a call to  `AddXmlDataContractSerializerFormatters()` chained off the `AddMvcCore` method in `ConfigureServices`:
+2. In `Startup.cs` add a call to `AddXmlDataContractSerializerFormatters()` chained off the `AddMvcCore` method in `ConfigureServices`:
 
   ```C#
   public void ConfigureServices(IServiceCollection services)
