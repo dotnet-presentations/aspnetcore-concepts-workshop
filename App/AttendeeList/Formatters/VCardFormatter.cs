@@ -41,7 +41,10 @@ EMAIL;type=INTERNET;type=pref:{attendee.Email}
 ORG:{attendee.Company};
 END:VCARD";
 
-            return context.HttpContext.Response.WriteAsync(VCardEncoder.Encode(card));
+            using (var writer = context.WriterFactory(context.HttpContext.Response.Body, Encoding.UTF8))
+            {
+                return writer.WriteAsync(VCardEncoder.Encode(card));
+            }
         }
 
         private class VCardEncoder : IFormatProvider, ICustomFormatter
