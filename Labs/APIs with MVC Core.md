@@ -40,7 +40,7 @@
   ```
   
 5. Create a folder called `Controllers` and create a class called `ProductsController` in that folder.
-6. Add an attribute route `[Route("/api/products")]` to the `ProductsController` class:
+6. Add an attribute route `[Route("/api/[controller]")]` to the `ProductsController` class:
 
   ```C#
   [Route("/api/[controller]")]
