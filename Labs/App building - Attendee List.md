@@ -21,6 +21,7 @@ There is a completed application as a further guide in the [App folder](https://
   - Edit an attendee's details (/{id}/edit)
   - Delete an attendee (with a confirmation form) (/{id}/delete)
 - Pages should include validation for create and update operations
+  - HINT: Check `ModelState.IsValid` and use the validation attributes on the model class and validation Tag Helpers in the forms
 - There should be JSON web APIs to:
   - List attendees (GET)
   - Retrieve an attendee's details (GET)
@@ -28,4 +29,6 @@ There is a completed application as a further guide in the [App folder](https://
   - Update an attendee's details (PUT)
   - Delete an attendee (DELETE)
 - APIs should validate changes for create and update operations and return suitable HTTP responses for operations
+  - HINT: Use the `CreatedAtAction`, `BadResult`, and `NoContent` helper methods to return appropriate HTTP status results
 - Enable downloading an attendee as a [vCard](https://en.wikipedia.org/wiki/VCard) contact
+  - HINT: Use a custom `OutputFormatter` and the `Produces` attribute
