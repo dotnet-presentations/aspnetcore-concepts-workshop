@@ -39,7 +39,7 @@
 6. Add an attribute route `[Route("/api/products")]` to the `ProductsController` class:
 
   ```C#
-  [Route("/api/products")]
+  [Route("/api/[controller]")]
   public class ProductsController
   {
   }
@@ -48,9 +48,10 @@
 7. Add a `Get` method to `ProductsController` that returns a `string` "Hello API World" with an attribute route
 
   ```C#
-  [Route("/api/products")]
+  [Route("/api/[controller]")]
   public class ProductsController
   {
+    [HttpGet]
     public string Get() => "Hello World";
   }
   ```
@@ -82,7 +83,7 @@
 3. Add a static list of projects to the `ProductsController`:
 
   ```C#
-  public class ProductsController
+  public class ProductsController : ControllerBase
   {
       private static List<Product> _products = new List<Product>(new[] {
           new Product() { Id = 1, Name = "Computer" },
@@ -147,10 +148,10 @@
 
       if (product == null)
       {
-          return new HttpNotFoundResult();
+          return NotFound();
       }
 
-      return new HttpOkObjectResult(product);
+      return Ok(product);
   }
   ```
 6. Run the application and navigate to `/api/products/40` and it should return a 404 status code.
@@ -228,6 +229,12 @@
 
   ```C#
   [Produces("application/json")]
-  [Route("/api/products")]
-  public class ProductsController
+  [Route("/api/[controller]")]
+  public class ProductsController : ControllerBase
   ```
+
+
+## Extra
+- Add model validation when the product has a missing Name (and return that back to the client)
+- Make the JSON properties camel case
+- Replace the static list of products with entity framework
