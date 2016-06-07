@@ -46,16 +46,21 @@ namespace AttendeeList.Controllers
 
         [HttpGet("{id:int}/vcard")]
         [Produces("text/vcard")]
-        public async Task<Attendee> VCard(int? id)
+        public async Task<IActionResult> VCard(int? id)
         {
             if (id == null)
             {
-                return null;
+                return NotFound();
             }
 
             var attendee = await _context.Attendees.SingleOrDefaultAsync(m => m.Id == id);
+            
+            if (attendee == null)
+            {
+                return NotFound();
+            }
 
-            return attendee;
+            return Ok(attendee);
         }
 
         // GET: Attendees/Create
