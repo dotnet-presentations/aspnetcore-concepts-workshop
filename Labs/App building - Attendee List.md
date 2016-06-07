@@ -6,7 +6,7 @@ There is a completed application as a further guide in the [App folder](https://
 
 ## Requirements
 - You can start with the empty project templaete or the full project template to get going
-  - HINT: the full project template enables MVC scaffolding which should make it much easier to build parts of the app
+  - HINT: the full project template (with Individual Auth) enables MVC scaffolding which should make it much easier to build parts of the app
 - Use Entity Framework Core to manage data, you can choose to use the in-memory provider, SQL, SQL Lite, etc.
 - Don't worry too much about making it look pretty with bootstrap, etc. We're just trying to make the application functional
 - Attendees should have the following properties
