@@ -126,7 +126,7 @@
   ```C#
   public Product Get(int id)
   {
-      return _products.Single(p => p.Id == id);
+      return _products.SingleOrDefault(p => p.Id == id);
   }
   ```
 
@@ -136,7 +136,7 @@
   [HttpGet("{id}")]
   public Product Get(int id)
   {
-      return _products.Single(p => p.Id == id);
+      return _products.SingleOrDefault(p => p.Id == id);
   }
   ```
 
