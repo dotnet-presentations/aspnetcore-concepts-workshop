@@ -237,4 +237,5 @@
 ## Extra
 - Add model validation when the product has a missing Name (and return that back to the client)
 - Make the JSON properties camel case
-- Replace the static list of products with entity framework
+- Replace the static list of products with entity framework in memory store
+- Replace the static list with entity framework + sqlite
