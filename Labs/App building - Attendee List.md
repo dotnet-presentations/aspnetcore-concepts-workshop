@@ -1,0 +1,31 @@
+# App Building: Attendee List
+
+Using what you've learnt so far, build a simple application for managing a list of course attendees. Use the requirements below as a guide.
+
+There is a completed application as a further guide in the [App folder](https://github.com/DamianEdwards/aspnetcore-workshop/tree/master/App) of this repository.
+
+## Requirements
+- You can start with the empty project templaete or the full project template to get going
+  - HINT: the full project template enables MVC scaffolding which should make it much easier to build parts of the app
+- Use Entity Framework Core to manage data, you can choose to use the in-memory provider, SQL, SQL Lite, etc.
+- Don't worry too much about making it look pretty with bootstrap, etc. We're just trying to make the application functional
+- Attendees should have the following properties
+  - FirstName (string, required)
+  - LastName (string, required)
+  - Email (string, required)
+  - Company (string)
+- There should be pages to:
+  - List attendees (/)
+  - View an attendee's details (/{id})
+  - Create an attendee (/create)
+  - Edit an attendee's details (/{id}/edit)
+  - Delete an attendee (with a confirmation form) (/{id}/delete)
+- Pages should include validation for create and update operations
+- There should be JSON web APIs to:
+  - List attendees (GET)
+  - Retrieve an attendee's details (GET)
+  - Create an attendee (POST)
+  - Update an attendee's details (PUT)
+  - Delete an attendee (DELETE)
+- APIs should validate changes for create and update operations and return suitable HTTP responses for operations
+- Enable downloading an attendee as a [vCard](https://en.wikipedia.org/wiki/VCard) contact
