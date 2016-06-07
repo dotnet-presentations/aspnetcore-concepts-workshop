@@ -228,7 +228,7 @@
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Mvc.Core": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0-rc2-final",
-    "Microsoft.AspNetCore.Mvc.Formatters.Xml": "1.0.0-rc2-final"
+    "Microsoft.AspNetCore.Mvc.Formatters.Xml": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0-rc2-final"
   },
   ```
