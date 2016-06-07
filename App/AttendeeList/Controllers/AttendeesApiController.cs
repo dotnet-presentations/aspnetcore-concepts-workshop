@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AttendeeList
 {
-    [Route("/api/[controller]")]
+    [Route("/api/attendees")]
     public class AttendeesApiController : Controller
     {
         private readonly WorkshopContext _context;
