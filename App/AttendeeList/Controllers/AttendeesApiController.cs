@@ -60,7 +60,7 @@ namespace AttendeeList
             {
                 _context.Update(attendee);
                 await _context.SaveChangesAsync();
-                return Ok(attendee);
+                return NoContent();
             }
             catch (DbUpdateConcurrencyException)
             {
