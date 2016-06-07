@@ -29,6 +29,6 @@ There is a completed application as a further guide in the [App folder](https://
   - Update an attendee's details (PUT)
   - Delete an attendee (DELETE)
 - APIs should validate changes for create and update operations and return suitable HTTP responses for operations
-  - HINT: Use the `CreatedAtAction`, `BadResult`, and `NoContent` helper methods to return appropriate HTTP status results
+  - HINT: Use the `CreatedAtAction`, `BadRequest`, and `NoContent` helper methods to return appropriate HTTP status results
 - Enable downloading an attendee as a [vCard](https://en.wikipedia.org/wiki/VCard) contact
   - HINT: Use a custom `OutputFormatter` and the `Produces` attribute
