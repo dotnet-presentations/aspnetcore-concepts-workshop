@@ -3,7 +3,7 @@
 
 1. Open Visual Studio 2015 Update 2
 1. Create a new ASP.NET Core application:
-  1. File -> New -> .NET Core -> ASP.NET Core Web Application (.NET Core)
+  1. File -> New -> .NET Core -> ASP.NET Core Web Application (.NET Core) (Empty Template)
 
 ## Running the application under IIS
 

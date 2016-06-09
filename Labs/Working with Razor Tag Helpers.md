@@ -22,7 +22,7 @@
     }
   ```
 
-1. Open the `_ViewImports.cshtml` file and add line to register your Tag Helper: `@addTagHelper "*, WebApplication49"`
+1. Open the `_ViewImports.cshtml` file and add line to register your Tag Helper: `@addTagHelper "*, WebApplication49"` (adjust WebApplication49 to your assembly name)
 1. Open `Views/Home/Index.cshtml` and use your Tag Helper, e.g.:
 
   ``` HTML
