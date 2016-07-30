@@ -20,7 +20,9 @@ namespace AttendeeList
         }
         
         public IConfiguration Configuration { get; set; }
-        
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<WorkshopContext>(options =>
@@ -30,12 +32,13 @@ namespace AttendeeList
 
             services.AddMvc(options => options.OutputFormatters.Add(new VCardFormatter()));
         }
-        
-        public void Configure(IApplicationBuilder app, IHostingEnvironment hostingEnvironment, ILoggerFactory loggerFactory)
-        {
-            loggerFactory.AddConsole(LogLevel.Debug);
 
-            if (hostingEnvironment.IsDevelopment())
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddConsole();
+
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
