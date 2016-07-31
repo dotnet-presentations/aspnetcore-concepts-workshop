@@ -1,24 +1,23 @@
-	1. Intro to .NET Core SDK (Scott)
-		a. .NET Core Overview
-			i. What and why
-			ii. Acquisition
-			iii. Dotnet driver (dotnet.exe)
-			iv. Dotnet CLI commands
-				1) Dotnet new
-				2) Dotnet restore
-				3) Dotnet run
-				4) Dotnet myapp.dll
-				5) Dotnet publish
-			v. Microsoft.NETCore.App meta-package, "type:platform", folder on disk, etc.
-				1) Portable vs. stand-alone apps
-				2) Publish portable app on Windows, copy to macOS and run there
-			vi. Netcoreapp1.0 tfm
-			vii. Project.json schema and options
-				1) buildOptions
-				2) Dependencies
-				3) Frameworks
-				4) runtimeOptions
-			viii. Running on .NET Framework vs. .NET Core
-		b. [demo] Installation overview
-		c. [demo] "dotnet new" console app
-		d. [demo] Make it a web app
+a. .NET Core Overview
+	i. What and why
+	ii. Acquisition
+	iii. Dotnet driver (dotnet.exe)
+	iv. Dotnet CLI commands
+		1) Dotnet new
+		2) Dotnet restore
+		3) Dotnet run
+		4) Dotnet myapp.dll
+		5) Dotnet publish
+	v. Microsoft.NETCore.App meta-package, "type:platform", folder on disk, etc.
+		1) Portable vs. stand-alone apps
+		2) Publish portable app on Windows, copy to macOS and run there
+	vi. Netcoreapp1.0 tfm
+	vii. Project.json schema and options
+		1) buildOptions
+		2) Dependencies
+		3) Frameworks
+		4) runtimeOptions
+	viii. Running on .NET Framework vs. .NET Core
+b. [demo] Installation overview
+c. [demo] "dotnet new" console app
+d. [demo] Make it a web app
