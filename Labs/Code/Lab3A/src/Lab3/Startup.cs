@@ -10,22 +10,22 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Routing;
 
-namespace Lab3
+namespace Lab2
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; set; }
+        public IConfigurationRoot Configuration { get; private set; }
 
         public Startup(IHostingEnvironment env)
         {
             Configuration = new ConfigurationBuilder()
-                                .SetBasePath(env.ContentRootPath)
-                                .AddJsonFile("appsettings.json")
-                                .Build();
+                    .SetBasePath(env.ContentRootPath)
+                    .AddJsonFile("appsettings.json")
+                    .Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting();
@@ -45,7 +45,7 @@ namespace Lab3
 
             routeBuilder.MapGet("", context => context.Response.WriteAsync("Hello from Routing!"));
             routeBuilder.MapGet("sub", context => context.Response.WriteAsync("Hello from sub!"));
-            routeBuilder.MapGet("item/{itemName}", context => context.Response.WriteAsync($"Item: {context.GetRouteValue("itemName")}"));
+            //routeBuilder.MapGet("item/{itemName}", context => context.Response.WriteAsync($"Item: {context.GetRouteValue("itemName")}"));
             routeBuilder.MapGet("item/{id:int}", context => context.Response.WriteAsync($"Item ID: {context.GetRouteValue("id")}"));
 
             app.UseRouter(routeBuilder.Build());
