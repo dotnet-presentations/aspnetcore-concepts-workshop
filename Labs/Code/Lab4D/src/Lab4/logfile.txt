@@ -1,82 +1,60 @@
-﻿2016-07-31 01:34:40.465 +10:00 [Information] Application startup complete!
-2016-07-31 01:34:40.483 +10:00 [Fatal] This is a critical message
-2016-07-31 01:34:40.493 +10:00 [Warning] This is a warning message
-2016-07-31 01:34:40.494 +10:00 [Error] This is an error message
-2016-07-31 01:34:40.972 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 01:34:41.126 +10:00 [Information] Request finished in 167.0068ms 200 
-2016-07-31 01:40:14.051 +10:00 [Information] Application startup complete!
-2016-07-31 01:40:14.073 +10:00 [Fatal] This is a critical message
-2016-07-31 01:40:14.076 +10:00 [Warning] This is a warning message
-2016-07-31 01:40:14.076 +10:00 [Error] This is an error message
-2016-07-31 01:40:14.684 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 01:40:14.710 +10:00 [Error] An unhandled exception has occurred while executing the request
+2017-01-13 01:38:57.500 -08:00 [Information] Application startup complete!
+2017-01-13 01:38:57.562 -08:00 [Fatal] This is a critical message
+2017-01-13 01:38:57.564 -08:00 [Warning] This is a warning message
+2017-01-13 01:38:57.565 -08:00 [Error] This is an error message
+2017-01-13 01:56:27.840 -08:00 [Information] Application startup complete!
+2017-01-13 01:56:27.881 -08:00 [Fatal] This is a critical message
+2017-01-13 01:56:27.883 -08:00 [Warning] This is a warning message
+2017-01-13 01:56:27.883 -08:00 [Error] This is an error message
+2017-01-13 01:56:35.979 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
+2017-01-13 01:56:41.547 -08:00 [Error] Connection id ""0HL1RJ9R04HV8"": An unhandled exception was thrown by the application.
 System.InvalidOperationException: Oops!
-   at Lab4.Startup.<>c.<<Configure>b__6_1>d.MoveNext() in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\LabCode\Lab4C\src\Lab4\Startup.cs:line 56
+   at Lab4.Startup.<>c.<Configure>b__6_0(HttpContext context) in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 55
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-01-13 01:56:42.358 -08:00 [Information] Request finished in 5633.8104ms 200 
+2017-01-13 01:58:11.103 -08:00 [Information] Application startup complete!
+2017-01-13 01:58:11.143 -08:00 [Fatal] This is a critical message
+2017-01-13 01:58:11.145 -08:00 [Warning] This is a warning message
+2017-01-13 01:58:11.146 -08:00 [Error] This is an error message
+2017-01-13 01:58:17.337 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
+2017-01-13 01:58:22.235 -08:00 [Error] An unhandled exception has occurred while executing the request
+System.InvalidOperationException: Oops!
+   at Lab4.Startup.<>c.<Configure>b__6_0(HttpContext context) in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 55
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
-2016-07-31 01:40:15.012 +10:00 [Information] Request finished in 363.0292ms 500 text/html; charset=utf-8
-2016-07-31 02:29:18.872 +10:00 [Information] Application startup complete!
-2016-07-31 02:29:18.900 +10:00 [Fatal] This is a critical message
-2016-07-31 02:29:18.902 +10:00 [Warning] This is a warning message
-2016-07-31 02:29:18.903 +10:00 [Error] This is an error message
-2016-07-31 02:29:24.112 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 02:29:24.209 +10:00 [Error] An unhandled exception has occurred while executing the request
+2017-01-13 01:58:22.895 -08:00 [Information] Request finished in 5572.0805ms 500 text/html; charset=utf-8
+2017-01-13 01:58:23.248 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
+2017-01-13 01:58:25.761 -08:00 [Error] An unhandled exception has occurred while executing the request
 System.InvalidOperationException: Oops!
-   at Lab4.Startup.<>c.<<Configure>b__6_3>d.MoveNext() in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\LabCode\Lab4C\src\Lab4\Startup.cs:line 68
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Lab4.Startup.<>c.<Configure>b__6_0(HttpContext context) in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 55
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
-2016-07-31 02:29:24.515 +10:00 [Information] Request finished in 446.5439ms 500 text/html; charset=utf-8
-2016-07-31 02:30:29.604 +10:00 [Information] Application startup complete!
-2016-07-31 02:30:29.638 +10:00 [Fatal] This is a critical message
-2016-07-31 02:30:29.642 +10:00 [Warning] This is a warning message
-2016-07-31 02:30:29.643 +10:00 [Error] This is an error message
-2016-07-31 02:30:31.557 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 02:30:31.637 +10:00 [Error] An unhandled exception has occurred: Oops!
+2017-01-13 01:58:26.200 -08:00 [Information] Request finished in 2553.9868ms 500 text/html; charset=utf-8
+2017-01-13 02:12:53.823 -08:00 [Information] Application startup complete!
+2017-01-13 02:12:53.870 -08:00 [Fatal] This is a critical message
+2017-01-13 02:12:53.872 -08:00 [Warning] This is a warning message
+2017-01-13 02:12:53.873 -08:00 [Error] This is an error message
+2017-01-13 02:13:01.282 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
+2017-01-13 02:13:12.000 -08:00 [Error] An unhandled exception has occurred: Oops!
 System.InvalidOperationException: Oops!
-   at Lab4.Startup.<>c.<<Configure>b__6_3>d.MoveNext() in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\LabCode\Lab4C\src\Lab4\Startup.cs:line 68
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Lab4.Startup.<>c.<Configure>b__6_2(HttpContext context) in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 60
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
-2016-07-31 02:30:31.879 +10:00 [Information] Request finished in 373.2943ms 500 text/html
-2016-07-31 02:30:32.511 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 02:30:32.562 +10:00 [Error] An unhandled exception has occurred: Oops!
+2017-01-13 02:13:12.489 -08:00 [Information] Request finished in 11206.4365ms 500 text/html
+2017-01-13 02:13:12.770 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
+2017-01-13 02:13:14.438 -08:00 [Error] An unhandled exception has occurred: Oops!
 System.InvalidOperationException: Oops!
-   at Lab4.Startup.<>c.<<Configure>b__6_3>d.MoveNext() in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\LabCode\Lab4C\src\Lab4\Startup.cs:line 68
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Lab4.Startup.<>c.<Configure>b__6_2(HttpContext context) in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 60
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
-2016-07-31 02:30:32.563 +10:00 [Information] Request finished in 52.6871ms 500 text/html
-2016-07-31 02:54:55.232 +10:00 [Information] Application startup complete!
-2016-07-31 02:54:55.259 +10:00 [Fatal] This is a critical message
-2016-07-31 02:54:55.262 +10:00 [Warning] This is a warning message
-2016-07-31 02:54:55.262 +10:00 [Error] This is an error message
-2016-07-31 02:54:56.593 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 02:54:56.730 +10:00 [Information] Request finished in 198.6505ms 404 
-2016-07-31 02:54:58.834 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 02:54:58.835 +10:00 [Information] Request finished in 0.2242ms 404 
-2016-07-31 03:00:17.067 +10:00 [Information] Application startup complete!
-2016-07-31 03:00:17.093 +10:00 [Fatal] This is a critical message
-2016-07-31 03:00:17.095 +10:00 [Warning] This is a warning message
-2016-07-31 03:00:17.096 +10:00 [Error] This is an error message
-2016-07-31 03:00:17.867 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 03:00:17.930 +10:00 [Information] Request finished in 89.3221ms 404 
-2016-07-31 03:02:47.324 +10:00 [Information] Application startup complete!
-2016-07-31 03:02:47.355 +10:00 [Fatal] This is a critical message
-2016-07-31 03:02:47.357 +10:00 [Warning] This is a warning message
-2016-07-31 03:02:47.358 +10:00 [Error] This is an error message
-2016-07-31 03:02:48.589 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 03:02:48.656 +10:00 [Information] Request finished in 120.611ms 404 
-2016-07-31 03:02:50.502 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 03:02:50.503 +10:00 [Information] Request finished in 0.1947ms 404 
-2016-07-31 03:04:10.505 +10:00 [Information] Application startup complete!
-2016-07-31 03:04:10.523 +10:00 [Fatal] This is a critical message
-2016-07-31 03:04:10.524 +10:00 [Warning] This is a warning message
-2016-07-31 03:04:10.525 +10:00 [Error] This is an error message
-2016-07-31 03:04:11.077 +10:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
-2016-07-31 03:04:11.200 +10:00 [Information] Request finished in 155.5083ms 404 text/html
+2017-01-13 02:13:14.442 -08:00 [Information] Request finished in 1674.765ms 500 text/html
+2017-01-13 02:17:16.748 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
+2017-01-13 02:17:16.897 -08:00 [Information] Request finished in 194.2546ms 404 text/html
+2017-01-13 02:17:17.213 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
+2017-01-13 02:17:17.215 -08:00 [Information] Request finished in 5.7487ms 404 text/html
+2017-01-13 02:22:34.803 -08:00 [Information] Application startup complete!
+2017-01-13 02:22:34.855 -08:00 [Fatal] This is a critical message
+2017-01-13 02:22:34.857 -08:00 [Warning] This is a warning message
+2017-01-13 02:22:34.858 -08:00 [Error] This is an error message
+2017-01-13 02:22:42.466 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
+2017-01-13 02:22:42.549 -08:00 [Information] Request finished in 114.4ms 404 text/html

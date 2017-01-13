@@ -15,14 +15,14 @@ namespace Lab4
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; set; }
+        public IConfigurationRoot Configuration { get; private set; }
 
         public Startup(IHostingEnvironment env)
         {
             Configuration = new ConfigurationBuilder()
-                                .SetBasePath(env.ContentRootPath)
-                                .AddJsonFile("appsettings.json")
-                                .Build();
+                    .SetBasePath(env.ContentRootPath)
+                    .AddJsonFile("appsettings.json")
+                    .Build();
 
             var logFile = Path.Combine(env.ContentRootPath, "logfile.txt");
 
@@ -32,7 +32,7 @@ namespace Lab4
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
         }
@@ -40,30 +40,22 @@ namespace Lab4
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole(LogLevel.Trace);
-            loggerFactory.AddConsole((category, level) => category == typeof(Startup).FullName);
+            loggerFactory.AddConsole();
             loggerFactory.AddSerilog();
 
             var startupLogger = loggerFactory.CreateLogger<Startup>();
 
-            if (env.IsDevelopment())
+            app.UseExceptionHandler(subApp =>
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler(subApp =>
+                subApp.Run(async context =>
                 {
-                    subApp.Run(async context =>
-                    {
-                        context.Response.ContentType = "text/html";
-                        await context.Response.WriteAsync("<strong> Application error. Please contact support. </strong>");
-                        await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
-                    });
+                    context.Response.ContentType = "text/html";
+                    await context.Response.WriteAsync("<strong> Application error. Please contact support. </strong>");
+                    await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
                 });
-            }
+            });
 
-            app.Run(async (context) =>
+            app.Run((context) =>
             {
                 throw new InvalidOperationException("Oops!");
             });
