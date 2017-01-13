@@ -3,8 +3,8 @@
 ## Day 1
 | Time | Title |  |
 | ---- | ----- | ---- |
-| 9:00 AM - 9:15 AM | Introduction & Day Overview | Scott |
-| 9:15 AM - 10:00 AM | Session #1: Introduction to the .NET Core SDK | Scott |
+| 9:00 AM - 9:15 AM | Introduction & Day Overview | Damian |
+| 9:15 AM - 10:00 AM | Session #1: Introduction to the .NET Core SDK | Damian |
 | 10:00 AM - 10:15 AM | Break | |
 | 10:15 AM - 10:45 AM | Lab #1 | Get bits installed, create first app |
 | 10:45 AM - 11:30 AM | Session #2: Introduction to ASP.NET Core | Jon |
@@ -15,7 +15,7 @@
 | 2:15 PM - 3:00 PM | Session #4: Logging & Error handling | Damian |
 | 3:00 PM - 3:15 PM | Break | |
 | 3:15 PM - 3:45 PM | Lab #4 | Using logging abstractions & providers, diagnostics pages/middleware |
-| 3:45 PM - 4:30 PM | Session #5: Dependency Injection & Testing | Damian |
+| 3:45 PM - 4:30 PM | Session #5: Dependency Injection & Testing | David |
 | 4:30 PM - 5:00 PM | Lab #5 | Use dependency injection for application services, add a unit test project |
 
 ## Day 2
@@ -28,7 +28,7 @@
 | 10:45 AM - 11:30 AM | Session #7: Single Page Applications | Jon |
 | 11:30 AM - 12:30 PM | Lab #7 | Single Page Applications |
 | 12:30 PM - 1:30 PM | Lunch | |
-| 1:30 PM - 2:15 PM | Session #8 : MVC Web API | Damian |
+| 1:30 PM - 2:15 PM | Session #8 : MVC Web API | David |
 | 2:15 PM - 3:00 PM | Lab #8 | MVC Web API *or* Deploy app to azure |
 | 3:00 PM - 3:15 PM | Break | |
 | 3:15 PM - 4:45 PM | App building: Attendee List | |
