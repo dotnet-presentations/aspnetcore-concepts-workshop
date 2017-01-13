@@ -1,6 +1,9 @@
 a. .NET Core Overview
 	i. What and why
 	ii. Acquisition
+		1) http://dot.net -> https://www.microsoft.com/net/download/core#/current
+		2) Windows SDK (Installer)
+		3) Visual Studio 2017 Tools (Preview 3) 
 	iii. Dotnet driver (dotnet.exe)
 	iv. Dotnet CLI commands
 		1) Dotnet new
@@ -11,13 +14,11 @@ a. .NET Core Overview
 	v. Microsoft.NETCore.App meta-package, "type:platform", folder on disk, etc.
 		1) Portable vs. stand-alone apps
 		2) Publish portable app on Windows, copy to macOS and run there
-	vi. Netcoreapp1.0 tfm
-	vii. Project.json schema and options
-		1) buildOptions
-		2) Dependencies
-		3) Frameworks
-		4) runtimeOptions
-	viii. Running on .NET Framework vs. .NET Core
+	vi. Project options
+		1) Target Framework
+		2) netcoreapp11 tfm
+		3) Compile Include (wildcard includes)
+	vii. Running on .NET Framework vs. .NET Core
 b. [demo] Installation overview
 c. [demo] "dotnet new" console app
 d. [demo] Make it a web app
