@@ -3,15 +3,13 @@
 ## Day 1
 | Time | Title |  |
 | ---- | ----- | ---- |
-| 9:00 AM - 9:15 AM | Introduction & Day Overview | Damian |
-| 9:15 AM - 10:00 AM | Session #1: Introduction to the .NET Core SDK | Damian |
-| 10:00 AM - 10:15 AM | Break | |
-| 10:15 AM - 10:45 AM | Lab #1 | Get bits installed, create first app |
-| 10:45 AM - 11:30 AM | Session #2: MVC Applications with ASP.NET Core | Jon |
-| 11:30 AM - 12:00 PM | Lab #2 | Routing patterns, MVC basics, etc. |
-| 12:00 PM - 1:00 PM | Lunch | |
-| 1:00 PM - 1:45 PM | Session #3: Startup, Hosting and Middleware | David |
-| 1:45 PM - 2:15 PM | Lab #3 | WebHost, Startup, Configuration, Environments, Middleware, & IIS |
+| 9:00 AM - 9:45 AM | Session #1: Introduction to the .NET Core SDK | Damian |
+| 9:45 AM - 10:15 AM | Lab #1 | Get bits installed, create first app |
+| 10:15 AM - 11:00 AM | Session #2: MVC Applications with ASP.NET Core | Jon |
+| 11:00 AM - 11:45 PM | Lab #2 | Routing patterns, MVC basics, etc. |
+| 11:45 PM - 12:30 PM | Session #3: Startup, Hosting and Middleware | David |
+| 12:30 PM - 1:30 PM | Lunch | |
+| 1:30 PM - 2:15 PM | Lab #3 | WebHost, Startup, Configuration, Environments, Middleware, & IIS |
 | 2:15 PM - 3:00 PM | Session #4: Dependency Injection & Testing | Damian |
 | 3:00 PM - 3:15 PM | Break | |
 | 3:15 PM - 3:45 PM | Lab #4 | Use dependency injection for application services, add a unit test project |
