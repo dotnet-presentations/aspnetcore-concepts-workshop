@@ -27,7 +27,7 @@ namespace Lab6
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
+                builder.AddUserSecrets("aspnet-Lab6-fb1b664f-9f81-4880-9063-c3543ec80118");
             }
 
             builder.AddEnvironmentVariables();
