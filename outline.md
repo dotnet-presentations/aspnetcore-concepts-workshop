@@ -12,10 +12,10 @@
 | 12:00 PM - 1:00 PM | Lunch | |
 | 1:00 PM - 1:45 PM | Session #3: Startup, Hosting and Middleware | David |
 | 1:45 PM - 2:15 PM | Lab #3 | WebHost, Startup, Configuration, Environments, Middleware, & IIS |
-| 2:15 PM - 3:00 PM | Session #4: Logging & Error handling | Damian |
+| 2:15 PM - 3:00 PM | Session #4: Logging & Error handling | David |
 | 3:00 PM - 3:15 PM | Break | |
 | 3:15 PM - 3:45 PM | Lab #4 | Using logging abstractions & providers, diagnostics pages/middleware |
-| 3:45 PM - 4:30 PM | Session #5: Dependency Injection & Testing | David |
+| 3:45 PM - 4:30 PM | Session #5: Dependency Injection & Testing | Damian |
 | 4:30 PM - 5:00 PM | Lab #5 | Use dependency injection for application services, add a unit test project |
 
 ## Day 2
