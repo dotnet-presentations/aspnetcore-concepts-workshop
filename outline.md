@@ -26,10 +26,10 @@
 | 10:00 AM - 10:15 AM | Break | |
 | 10:15 AM - 10:45 AM | Lab #6 | Working with Tag Helpers |
 | 10:45 AM - 11:30 AM | Session #7: MVC Web API | David |
-| 11:30 AM - 12:30 PM | MVC Web API *or* Deploy app to azure |
+| 11:30 AM - 12:30 PM | Lab #7 | MVC Web API *or* Deploy app to azure |
 | 12:30 PM - 1:30 PM | Lunch | |
 | 1:30 PM - 2:15 PM | Session #8 : Single Page Applications | Jon |
-| 2:15 PM - 3:00 PM | Lab #8 | Lab #7 | Single Page Applications |
+| 2:15 PM - 3:00 PM | Lab #8 | Single Page Applications |
 | 3:00 PM - 3:15 PM | Break | |
 | 3:15 PM - 4:45 PM | App building: Attendee List | |
 | 4:45 PM - 5:00 PM | Summary & Conclusion | |
