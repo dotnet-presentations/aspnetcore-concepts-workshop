@@ -4,10 +4,11 @@
 | Time | Title |  |
 | ---- | ----- | ---- |
 | 9:00 AM - 9:45 AM | Session #1: Introduction to the .NET Core SDK | Damian |
-| 9:45 AM - 10:15 AM | Lab #1 | Get bits installed, create first app |
-| 10:15 AM - 11:00 AM | Session #2: MVC Applications with ASP.NET Core | Jon |
-| 11:00 AM - 11:45 PM | Lab #2 | Routing patterns, MVC basics, etc. |
-| 11:45 PM - 12:30 PM | Session #3: Startup, Hosting and Middleware | David |
+| 9:45 AM - 10:30 AM | Lab #1 | Get bits installed, create first app |
+| 10:30 PM - 10:45 AM | Breakfast Snack | |
+| 10:45 AM - 11:15 AM | Session #2: MVC Applications with ASP.NET Core | Jon |
+| 11:15 AM - 12:00 PM | Lab #2 | Routing patterns, MVC basics, etc. |
+| 12:00 PM - 12:30 PM | Session #3: Startup, Hosting and Middleware | David |
 | 12:30 PM - 1:30 PM | Lunch | |
 | 1:30 PM - 2:15 PM | Lab #3 | WebHost, Startup, Configuration, Environments, Middleware, & IIS |
 | 2:15 PM - 3:00 PM | Session #4: Dependency Injection & Testing | Damian |
