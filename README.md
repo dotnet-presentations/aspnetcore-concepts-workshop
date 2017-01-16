@@ -3,8 +3,8 @@
 
 ## Installers
 
-### .NET Core 1.1.0 SDK Preview 2.1 build 3177
-Follow instructions from https://github.com/dotnet/core/blob/master/release-notes/download-archive.md
+### .NET Core SDK 1.0 Preview 4 build 004233
+Follow instructions from https://github.com/dotnet/core/blob/master/release-notes/preview4-download.md
 
 ### Visual Studio 2017 RC (Offline Installer)
 1. Run vs_community.exe in vs2017 folder
