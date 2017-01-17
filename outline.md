@@ -22,8 +22,8 @@
 | ---- | ----- | ---- |
 | 9:00 AM - 9:15 AM | Introduction & Day Overview | |
 | 9:15 AM - 10:00 AM | Session #6: Razor & Tag Helpers | Damian |
-| 10:00 AM - 10:15 AM | Break | |
-| 10:15 AM - 10:45 AM | Lab #6 | Working with Tag Helpers |
+| 10:10 AM - 10:30 AM | Lab #6 | Working with Tag Helpers |
+| 10:30 AM - 10:45 AM | Break | |
 | 10:45 AM - 11:30 AM | Session #7: MVC Web API | David |
 | 11:30 AM - 12:30 PM | Lab #7 | MVC Web API *or* Deploy app to azure |
 | 12:30 PM - 1:30 PM | Lunch | |
