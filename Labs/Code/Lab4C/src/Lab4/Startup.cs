@@ -15,14 +15,11 @@ namespace Lab4
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; private set; }
+        public IConfiguration Configuration { get; private set; }
 
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = new ConfigurationBuilder()
-                    .SetBasePath(env.ContentRootPath)
-                    .AddJsonFile("appsettings.json")
-                    .Build();
+            Configuration = configuration;
 
             var logFile = Path.Combine(env.ContentRootPath, "logfile.txt");
 

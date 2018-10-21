@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
@@ -9,14 +10,11 @@ namespace AttendeeList
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
-                            .UseContentRoot(Directory.GetCurrentDirectory())
-                            .UseKestrel()
-                            .UseIISIntegration()
-                            .UseStartup<Startup>()
-                            .Build();
-
-            host.Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26020.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{81F6D934-5486-4998-B3F5-8868049610AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2A", "src\Lab2A\Lab2A.csproj", "{7BE7C5DC-F1DE-415E-B08A-1C744E709331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2A", "src\Lab2A\Lab2A.csproj", "{7BE7C5DC-F1DE-415E-B08A-1C744E709331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,21 +19,24 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x64.ActiveCfg = Debug|x64
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x64.Build.0 = Debug|x64
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x86.ActiveCfg = Debug|x86
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x86.Build.0 = Debug|x86
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x64.Build.0 = Debug|Any CPU
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Debug|x86.Build.0 = Debug|Any CPU
 		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x64.ActiveCfg = Release|x64
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x64.Build.0 = Release|x64
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x86.ActiveCfg = Release|x86
-		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x86.Build.0 = Release|x86
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x64.ActiveCfg = Release|Any CPU
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x64.Build.0 = Release|Any CPU
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x86.ActiveCfg = Release|Any CPU
+		{7BE7C5DC-F1DE-415E-B08A-1C744E709331}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7BE7C5DC-F1DE-415E-B08A-1C744E709331} = {81F6D934-5486-4998-B3F5-8868049610AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AB53B0E-CCA9-4166-9082-6B2734A06E18}
 	EndGlobalSection
 EndGlobal
