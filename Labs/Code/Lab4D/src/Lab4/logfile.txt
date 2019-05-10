@@ -58,3 +58,25 @@ System.InvalidOperationException: Oops!
 2017-01-13 02:22:34.858 -08:00 [Error] This is an error message
 2017-01-13 02:22:42.466 -08:00 [Information] Request starting HTTP/1.1 GET http://localhost:8081/  
 2017-01-13 02:22:42.549 -08:00 [Information] Request finished in 114.4ms 404 text/html
+2018-10-21 12:37:29.427 +02:00 [INF] Application startup complete!
+2018-10-21 12:37:29.491 +02:00 [FTL] This is a critical message
+2018-10-21 12:37:29.502 +02:00 [WRN] This is a warning message
+2018-10-21 12:37:29.509 +02:00 [ERR] This is an error message
+2018-10-21 12:37:30.161 +02:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
+2018-10-21 12:37:30.161 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2018-10-21 12:37:30.224 +02:00 [INF] Request finished in 60.1793ms 200 
+2018-10-21 12:37:30.224 +02:00 [INF] Request finished in 60.1433ms 404 
+2018-10-21 12:37:30.781 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/favicon.ico  
+2018-10-21 12:37:30.786 +02:00 [INF] Request finished in 3.8411ms 404 
+2018-10-21 12:38:18.227 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2018-10-21 12:38:24.868 +02:00 [INF] Request finished in 6638.0737ms 404 
+2018-10-21 12:39:13.050 +02:00 [INF] Application startup complete!
+2018-10-21 12:39:13.082 +02:00 [FTL] This is a critical message
+2018-10-21 12:39:13.085 +02:00 [WRN] This is a warning message
+2018-10-21 12:39:13.087 +02:00 [ERR] This is an error message
+2018-10-21 12:39:22.036 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/  
+2018-10-21 12:39:24.878 +02:00 [INF] Request finished in 2848.5195ms 404 text/html
+2018-10-21 12:39:25.019 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
+2018-10-21 12:39:25.929 +02:00 [INF] Request finished in 883.7501ms 404 text/html
+2018-10-21 12:39:25.944 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
+2018-10-21 12:39:26.937 +02:00 [INF] Request finished in 993.3704ms 404 text/html

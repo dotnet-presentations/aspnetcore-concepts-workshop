@@ -11,11 +11,11 @@
 
 1. Right click on the project and click publish and click on **Microsoft Azure App Service**:
 
-  ![image](https://cloud.githubusercontent.com/assets/95136/15857377/671e1e50-2cbb-11e6-8a8e-ba7873213e67.png)
+    ![image](https://cloud.githubusercontent.com/assets/95136/15857377/671e1e50-2cbb-11e6-8a8e-ba7873213e67.png)
   
 1. Create a new resource group and name it after your project
 
-  ![image](https://cloud.githubusercontent.com/assets/95136/15857406/91a0a116-2cbb-11e6-8fcc-e0bc8dfed211.png)
+    ![image](https://cloud.githubusercontent.com/assets/95136/15857406/91a0a116-2cbb-11e6-8fcc-e0bc8dfed211.png)
 
 1. Once the resource group is created, follow the instructions and deploy the site to azure.
 

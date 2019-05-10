@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab3
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; private set; }
+        public IConfiguration Configuration { get; private set; }
 
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
-            Configuration = new ConfigurationBuilder()
-                    .SetBasePath(env.ContentRootPath)
-                    .AddJsonFile("appsettings.json")
-                    .Build();
+            Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -30,10 +22,8 @@ namespace Lab3
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

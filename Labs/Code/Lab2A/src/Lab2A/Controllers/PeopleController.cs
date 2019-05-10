@@ -16,7 +16,7 @@ namespace Lab2A.Controllers
 
         public PeopleController(ApplicationDbContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: People
@@ -34,7 +34,7 @@ namespace Lab2A.Controllers
             }
 
             var person = await _context.Person
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (person == null)
             {
                 return NotFound();
@@ -60,7 +60,7 @@ namespace Lab2A.Controllers
             {
                 _context.Add(person);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             return View(person);
         }
@@ -73,7 +73,7 @@ namespace Lab2A.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person.SingleOrDefaultAsync(m => m.ID == id);
+            var person = await _context.Person.FindAsync(id);
             if (person == null)
             {
                 return NotFound();
@@ -111,7 +111,7 @@ namespace Lab2A.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             return View(person);
         }
@@ -125,7 +125,7 @@ namespace Lab2A.Controllers
             }
 
             var person = await _context.Person
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (person == null)
             {
                 return NotFound();
@@ -139,10 +139,10 @@ namespace Lab2A.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var person = await _context.Person.SingleOrDefaultAsync(m => m.ID == id);
+            var person = await _context.Person.FindAsync(id);
             _context.Person.Remove(person);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         private bool PersonExists(int id)

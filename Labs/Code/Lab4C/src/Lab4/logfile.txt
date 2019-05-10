@@ -48,3 +48,21 @@ System.InvalidOperationException: Oops!
    at Lab4.Startup.<>c.<Configure>b__6_2(HttpContext context) in C:\Users\jonga\Documents\GitHub\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 60
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
 2017-01-13 02:13:14.442 -08:00 [Information] Request finished in 1674.765ms 500 text/html
+2018-10-21 12:26:30.443 +02:00 [INF] Application startup complete!
+2018-10-21 12:26:30.518 +02:00 [FTL] This is a critical message
+2018-10-21 12:26:30.542 +02:00 [WRN] This is a warning message
+2018-10-21 12:26:30.557 +02:00 [ERR] This is an error message
+2018-10-21 12:26:31.204 +02:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
+2018-10-21 12:26:31.204 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2018-10-21 12:26:34.916 +02:00 [INF] Request finished in 3701.5944ms 200 
+2018-10-21 12:26:35.032 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab4.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Source\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 57
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2018-10-21 12:26:35.073 +02:00 [INF] Request finished in 3873.848ms 500 text/html
+2018-10-21 12:26:35.379 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/favicon.ico  
+2018-10-21 12:26:37.006 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab4.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Source\aspnetcore-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 57
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2018-10-21 12:26:37.011 +02:00 [INF] Request finished in 1638.9219ms 500 text/html
