@@ -29,15 +29,13 @@ namespace Lab4
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder =>
+                loggingBuilder.AddSerilog(dispose: true));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole(LogLevel.Trace);
-            loggerFactory.AddConsole((category, level) => category == typeof(Startup).FullName);
-            loggerFactory.AddSerilog();
-
             var startupLogger = loggerFactory.CreateLogger<Startup>();
 
             if (env.IsDevelopment())
@@ -64,7 +62,6 @@ namespace Lab4
             });
 
             startupLogger.LogInformation("Application startup complete!");
-
             startupLogger.LogCritical("This is a critical message");
             startupLogger.LogDebug("This is a debug message");
             startupLogger.LogTrace("This is a trace message");
