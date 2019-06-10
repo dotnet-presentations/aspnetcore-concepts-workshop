@@ -32,25 +32,31 @@ namespace Lab4
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder =>
+                loggingBuilder.AddSerilog(dispose: true));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
-            loggerFactory.AddSerilog();
-
             var startupLogger = loggerFactory.CreateLogger<Startup>();
 
-            app.UseExceptionHandler(subApp =>
+            if (env.IsDevelopment())
             {
-                subApp.Run(async context =>
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(subApp =>
                 {
-                    context.Response.ContentType = "text/html";
-                    await context.Response.WriteAsync("<strong> Application error. Please contact support. </strong>");
-                    await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
+                    subApp.Run(async context =>
+                    {
+                        context.Response.ContentType = "text/html";
+                        await context.Response.WriteAsync("<strong> Application error. Please contact support. </strong>");
+                        await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
+                    });
                 });
-            });
+            }
 
             app.Run((context) =>
             {
@@ -58,7 +64,6 @@ namespace Lab4
             });
 
             startupLogger.LogInformation("Application startup complete!");
-
             startupLogger.LogCritical("This is a critical message");
             startupLogger.LogDebug("This is a debug message");
             startupLogger.LogTrace("This is a trace message");

@@ -3,10 +3,10 @@
 
 ## Installers
 
-### .NET Core SDK 1.0 Preview 4 build 004233
-Follow instructions from https://github.com/dotnet/core/blob/master/release-notes/preview4-download.md
+### .NET Core SDK 2.2
+Follow instructions from https://dotnet.microsoft.com/download
 
-### Visual Studio 2017 RC (Offline Installer)
+### Visual Studio 2017 (Offline Installer)
 1. Run vs_community.exe in vs2017 folder
 1. Select **only** `.NET Core` and `Web Development` workloads
 
