@@ -3,7 +3,7 @@
 
 This workshop covers various concepts of ASP.NET Core:
 
-|Lab|Description| Prerequisites|
+|Lab|Description|Prerequisites|
 --|--|--|
 |[.NET Core SDK](Labs\1.%20Introduction%20to%20the%20.NET%20Core%20SDK.md) | Convert a .NET Core Console Application into a ASP.NET Core Web Application. |
 |[MVC Applications](Labs\2.%20MVC%20Applications%20with%20ASP.NET%20Core.md) | Create an .NET Core MVC App and explore routing.
@@ -17,14 +17,16 @@ This workshop covers various concepts of ASP.NET Core:
 |[APIs with MVC Core](Labs\8.%20APIs%20with%20MVC%20Core.md) | Build a simple API with MVC Core. |
 |[Hosting & Deployment](Labs\8.1%20Hosting%20&%20Deployment.md)| Deploy your ASP.NET Core App to Azure. | [APIs with MVC Core](Labs\8.%20APIs%20with%20MVC%20Core.md)
 
-## Installers
+## Getting Started
 
-### .NET Core SDK 2.2
-Follow instructions from https://dotnet.microsoft.com/download
+### Installation
 
-### Visual Studio 2017 (Offline Installer)
-1. Run vs_community.exe in vs2017 folder
-2. Select **only** `.NET Core` and `Web Development` workloads
+- [.NET Core SDK 2.2](https://dotnet.microsoft.com/download)
+- [Visual Studio Code](https://visualstudio.microsoft.com/downloads/)
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 
-### VS Code (on USB drive)
-1. Install VS Code from USB drive or http://code.visualstudio.com.
+    In the Visual Studio Installer, install the following workloads:
+
+    - ASP.NET and web development
+    - .NET Core cross-platform development
+    - Azure development (Only required for [Lab 8.1](Labs\8.1%20Hosting%20&%20Deployment.md))
