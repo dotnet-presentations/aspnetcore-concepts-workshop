@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26020.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{665FCCEE-47C5-4936-ADA0-F7E3A0430E87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab4", "src\Lab4\Lab4.csproj", "{091CD54A-0190-4CFC-A20E-BABD61799536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab4A", "src\Lab4A\Lab4A.csproj", "{091CD54A-0190-4CFC-A20E-BABD61799536}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{091CD54A-0190-4CFC-A20E-BABD61799536} = {665FCCEE-47C5-4936-ADA0-F7E3A0430E87}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A48721F1-1019-474D-A0B3-01473772CC2D}
 	EndGlobalSection
 EndGlobal

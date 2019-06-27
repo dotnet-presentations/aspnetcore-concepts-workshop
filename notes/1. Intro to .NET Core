@@ -3,7 +3,7 @@ a. .NET Core Overview
 	ii. Acquisition
 		1) http://dot.net -> https://www.microsoft.com/net/download/core#/current
 		2) Windows SDK (Installer)
-		3) Visual Studio 2017 Tools (Preview 4) 
+		3) Visual Studio 2019 Tools (Preview 4) 
 	iii. Dotnet driver (dotnet.exe)
 	iv. Dotnet CLI commands
 		1) Dotnet new
