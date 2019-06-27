@@ -6,9 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.IO;
-using System.Threading.Tasks;
 
-namespace Lab4
+namespace Lab5B
 {
     public class Startup
     {
@@ -42,23 +41,11 @@ namespace Lab4
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseStatusCodePages(subApp =>
-                {
-                    subApp.Run(async context =>
-                    {
-                        context.Response.ContentType = "text/html";
-                        await context.Response.WriteAsync($"<strong> You got a {context.Response.StatusCode}<strong>");
-                        await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
-                    });
-                });
-            }
 
-            app.Run((context) =>
+            app.Run(async (context) =>
             {
-                context.Response.StatusCode = 404;
-                return Task.FromResult(0);
+                //await context.Response.WriteAsync($"Hello World! {env.EnvironmentName}");
+                await context.Response.WriteAsync($"{Configuration["message"]}");
             });
 
             startupLogger.LogInformation("Application startup complete!");

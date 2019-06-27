@@ -1,4 +1,0 @@
-2019-05-12 15:13:47.196 +02:00 [INF] Application startup complete!
-2019-05-12 15:13:47.221 +02:00 [FTL] This is a critical message
-2019-05-12 15:13:47.223 +02:00 [WRN] This is a warning message
-2019-05-12 15:13:47.227 +02:00 [ERR] This is an error message

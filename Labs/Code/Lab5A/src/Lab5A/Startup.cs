@@ -1,39 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
-using System.IO;
-using Serilog;
 
-namespace Lab4
+namespace Lab5A
 {
     public class Startup
     {
         public IConfiguration Configuration { get; private set; }
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
-            var logFile = Path.Combine(env.ContentRootPath, "logfile.txt");
-
-            Log.Logger = new LoggerConfiguration()
-                .WriteTo.File(logFile)
-                .CreateLogger();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLogging(loggingBuilder =>
-                loggingBuilder.AddSerilog(dispose: true));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,22 +31,11 @@ namespace Lab4
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler(subApp =>
-                {
-                    subApp.Run(async context =>
-                    {
-                        context.Response.ContentType = "text/html";
-                        await context.Response.WriteAsync("<strong> Application error. Please contact support. </strong>");
-                        await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
-                    });
-                });
-            }
 
-            app.Run((context) =>
+            app.Run(async (context) =>
             {
-                throw new InvalidOperationException("Oops!");
+                //await context.Response.WriteAsync($"Hello World! {env.EnvironmentName}");
+                await context.Response.WriteAsync($"{Configuration["message"]}");
             });
 
             startupLogger.LogInformation("Application startup complete!");

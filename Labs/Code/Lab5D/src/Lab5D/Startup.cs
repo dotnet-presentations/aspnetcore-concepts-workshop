@@ -4,22 +4,33 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using System.IO;
+using System.Threading.Tasks;
 
-namespace Lab4
+namespace Lab5D
 {
     public class Startup
     {
         public IConfiguration Configuration { get; private set; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+
+            var logFile = Path.Combine(env.ContentRootPath, "logfile.txt");
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File(logFile)
+                .CreateLogger();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder =>
+                loggingBuilder.AddSerilog(dispose: true));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,11 +42,23 @@ namespace Lab4
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
+            else
             {
-                //await context.Response.WriteAsync($"Hello World! {env.EnvironmentName}");
-                await context.Response.WriteAsync($"{Configuration["message"]}");
+                app.UseStatusCodePages(subApp =>
+                {
+                    subApp.Run(async context =>
+                    {
+                        context.Response.ContentType = "text/html";
+                        await context.Response.WriteAsync($"<strong> You got a {context.Response.StatusCode}<strong>");
+                        await context.Response.WriteAsync(new string(' ', 512));  // Padding for IE
+                    });
+                });
+            }
+
+            app.Run((context) =>
+            {
+                context.Response.StatusCode = 404;
+                return Task.FromResult(0);
             });
 
             startupLogger.LogInformation("Application startup complete!");
