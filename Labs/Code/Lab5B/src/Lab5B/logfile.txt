@@ -1,0 +1,12 @@
+2019-05-12 15:13:47.196 +02:00 [INF] Application startup complete!
+2019-05-12 15:13:47.221 +02:00 [FTL] This is a critical message
+2019-05-12 15:13:47.223 +02:00 [WRN] This is a warning message
+2019-05-12 15:13:47.227 +02:00 [ERR] This is an error message
+2019-06-27 13:15:14.589 -04:00 [INF] Application startup complete!
+2019-06-27 13:15:14.615 -04:00 [FTL] This is a critical message
+2019-06-27 13:15:14.618 -04:00 [WRN] This is a warning message
+2019-06-27 13:15:14.620 -04:00 [ERR] This is an error message
+2019-06-27 13:15:15.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2019-06-27 13:15:15.135 -04:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
+2019-06-27 13:15:15.206 -04:00 [INF] Request finished in 69.6093ms 200 
+2019-06-27 13:15:15.206 -04:00 [INF] Request finished in 66.8296ms 200 

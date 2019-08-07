@@ -1,0 +1,46 @@
+2019-05-12 15:22:59.347 +02:00 [INF] Application startup complete!
+2019-05-12 15:22:59.376 +02:00 [FTL] This is a critical message
+2019-05-12 15:22:59.399 +02:00 [WRN] This is a warning message
+2019-05-12 15:22:59.401 +02:00 [ERR] This is an error message
+2019-05-12 15:23:08.243 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/  
+2019-05-12 15:23:10.440 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab4.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Sources\arnaudmaichac\aspnetcore-concepts-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 63
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2019-05-12 15:23:10.488 +02:00 [INF] Request finished in 2251.089ms 500 text/html
+2019-05-12 15:23:10.585 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
+2019-05-12 15:23:11.492 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab4.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Sources\arnaudmaichac\aspnetcore-concepts-workshop\Labs\Code\Lab4C\src\Lab4\Startup.cs:line 63
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2019-05-12 15:23:11.500 +02:00 [INF] Request finished in 912.8695ms 500 text/html
+2019-06-27 13:18:01.978 -04:00 [INF] Application startup complete!
+2019-06-27 13:18:02.010 -04:00 [FTL] This is a critical message
+2019-06-27 13:18:02.013 -04:00 [WRN] This is a warning message
+2019-06-27 13:18:02.015 -04:00 [ERR] This is an error message
+2019-06-27 13:18:02.634 -04:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
+2019-06-27 13:18:02.634 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2019-06-27 13:39:48.948 -04:00 [INF] Application startup complete!
+2019-06-27 13:39:48.975 -04:00 [FTL] This is a critical message
+2019-06-27 13:39:48.984 -04:00 [WRN] This is a warning message
+2019-06-27 13:39:48.987 -04:00 [ERR] This is an error message
+2019-06-27 13:39:49.522 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2019-06-27 13:39:49.522 -04:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
+2019-06-27 13:39:54.257 -04:00 [INF] Request finished in 4731.3717ms 200 
+2019-06-27 13:39:54.369 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab5C.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Users\jasmineg\projects\ForWork\netcore-workshops\aspnetcore-concepts-workshop\Labs\Code\Lab5C\src\Lab4\Startup.cs:line 63
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-06-27 13:39:54.434 -04:00 [INF] Request finished in 4917.4883ms 500 text/html; charset=utf-8
+2019-06-27 13:40:30.632 -04:00 [INF] Application startup complete!
+2019-06-27 13:40:30.658 -04:00 [FTL] This is a critical message
+2019-06-27 13:40:30.664 -04:00 [WRN] This is a warning message
+2019-06-27 13:40:30.668 -04:00 [ERR] This is an error message
+2019-06-27 13:40:31.173 -04:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
+2019-06-27 13:40:31.173 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2019-06-27 13:40:35.069 -04:00 [INF] Request finished in 3899.5096ms 200 
+2019-06-27 13:40:35.115 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab5C.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Users\jasmineg\projects\ForWork\netcore-workshops\aspnetcore-concepts-workshop\Labs\Code\Lab5C\src\Lab4\Startup.cs:line 63
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2019-06-27 13:40:35.155 -04:00 [INF] Request finished in 3996.2922ms 500 text/html

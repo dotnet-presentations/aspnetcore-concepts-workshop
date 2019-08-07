@@ -1,8 +1,0 @@
-2019-05-12 15:28:52.917 +02:00 [INF] Application startup complete!
-2019-05-12 15:28:52.999 +02:00 [FTL] This is a critical message
-2019-05-12 15:28:53.004 +02:00 [WRN] This is a warning message
-2019-05-12 15:28:53.007 +02:00 [ERR] This is an error message
-2019-05-12 15:29:02.320 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/  
-2019-05-12 15:29:02.356 +02:00 [INF] Request finished in 38.8702ms 404 text/html
-2019-05-12 15:29:02.501 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:8081/favicon.ico  
-2019-05-12 15:29:02.512 +02:00 [INF] Request finished in 6.5073ms 404 text/html
