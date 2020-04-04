@@ -90,3 +90,12 @@
 2019-06-27 13:37:54.603 -04:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:55740/  0
 2019-06-27 13:37:58.072 -04:00 [INF] Request finished in 107.4866ms 200 
 2019-06-27 13:37:58.085 -04:00 [INF] Request finished in 3516.8353ms 404 text/html
+2020-04-04 17:01:01.482 +03:00 [INF] Application startup complete!
+2020-04-04 17:01:01.509 +03:00 [FTL] This is a critical message
+2020-04-04 17:01:01.532 +03:00 [WRN] This is a warning message
+2020-04-04 17:01:01.533 +03:00 [ERR] This is an error message
+2020-04-04 17:01:01.539 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-04 17:01:01.548 +03:00 [INF] Hosting environment: Production
+2020-04-04 17:01:01.556 +03:00 [INF] Content root path: D:\learning\misc\forks\aspnetcore-concepts-workshop\Labs\Code\Lab5D\src\Lab5D
+2020-04-04 17:01:01.611 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2020-04-04 17:01:01.657 +03:00 [INF] Request finished in 48.08ms 404 text/html

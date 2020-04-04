@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.IO;
+using Microsoft.Extensions.Hosting;
 
 namespace Lab5B
 {
@@ -13,7 +14,7 @@ namespace Lab5B
     {
         public IConfiguration Configuration { get; private set; }
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
 
@@ -33,7 +34,7 @@ namespace Lab5B
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             var startupLogger = loggerFactory.CreateLogger<Startup>();
 

@@ -44,3 +44,16 @@ System.InvalidOperationException: Oops!
    at Lab5C.Startup.<>c.<Configure>b__6_1(HttpContext context) in C:\Users\jasmineg\projects\ForWork\netcore-workshops\aspnetcore-concepts-workshop\Labs\Code\Lab5C\src\Lab4\Startup.cs:line 63
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
 2019-06-27 13:40:35.155 -04:00 [INF] Request finished in 3996.2922ms 500 text/html
+2020-04-04 16:52:31.677 +03:00 [INF] Application startup complete!
+2020-04-04 16:52:31.712 +03:00 [FTL] This is a critical message
+2020-04-04 16:52:31.715 +03:00 [WRN] This is a warning message
+2020-04-04 16:52:31.717 +03:00 [ERR] This is an error message
+2020-04-04 16:52:31.724 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-04 16:52:31.736 +03:00 [INF] Hosting environment: Production
+2020-04-04 16:52:31.751 +03:00 [INF] Content root path: D:\learning\misc\forks\aspnetcore-concepts-workshop\Labs\Code\Lab5C\src\Lab5C
+2020-04-04 16:52:31.805 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:55740/  
+2020-04-04 16:52:35.727 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Oops!
+   at Lab5C.Startup.<>c.<Configure>b__6_1(HttpContext context) in D:\learning\misc\forks\aspnetcore-concepts-workshop\Labs\Code\Lab5C\src\Lab5C\Startup.cs:line 64
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2020-04-04 16:52:35.769 +03:00 [INF] Request finished in 3968.0641ms 500 text/html
