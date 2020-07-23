@@ -6,7 +6,7 @@ using System.Linq;
 namespace Lab8.Controllers
 {
     [Route("/api/[controller]")]
-    [Produces("application/json")]
+   // [Produces("application/json")]
     public class ProductsController : ControllerBase
     {
         private static List<Product> _products = new List<Product>(new[] {
